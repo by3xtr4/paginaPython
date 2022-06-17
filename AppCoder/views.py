@@ -31,5 +31,5 @@ def entregables(request):
       return render(request, "AppCoder/entregables.html")
 
 #nuevaVista, mia
-def contacto(request):
-      return render(request, "AppCoder/contacto.html")
+def contador(request):
+      return render(request, "AppCoder/contador.html")
