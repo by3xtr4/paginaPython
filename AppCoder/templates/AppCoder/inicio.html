@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block contenidoSecciones %}
-<header style="height: 100px;  background-color: red; padding-top: 60px; height: 200px; ">
+<header style="height: 100px;  background-color: red; padding-top: 60px; height: 300px; ">
     <div class="container position-relative">
         <div class="row justify-content-center">
             <div class="col-xl-6">
@@ -13,12 +13,34 @@
 
                     <h5 class="mb-2">muestro el contenenito, ya llegaremos a eso</h5>
 
-                    <p>Podrás en esta página web visualizar el listado de estudiantes, profesores, entregables y mucho más. Para hacerlo solo visita cada sección correspondiente eligiendo desde el menu principal!</p>
-                    
+                    <p>Podrás en esta página web visualizar el listado de estudiantes, profesores, entregables y mucho más. Para hacerlo solo visita cada sección correspondiente eligiendo desde el menu principal!<br><br><br><br></p>
                    
                 </div>
             </div>
         </div>
     </div>
 </header>
+
+<div class="row" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+    <div class="col"><br>
+        Variable consultada: {{ variable }}<br><br>
+        {% if cursos %}
+
+    <p>Estamos buscando el: {{camada}}</p>
+
+    <ul>
+	{% for curso in cursos %}
+		<li> {{curso.nombre}} </li>
+		<li> {{curso.camada}} </li>
+	{% endfor %}
+
+    </ul>
+   
+    {% endif %}
+    </div>
+</div> 
+
+
+
+
 {% endblock %}

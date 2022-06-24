@@ -1,26 +1,23 @@
 from django.db import models
 
-# Create your models here.
-class Curso(models.Model):
+# Creo los modelos
 
+class Newsletter(models.Model):
     nombre=models.CharField(max_length=40)
-    camada = models.IntegerField()
+    email = models.EmailField()
 
-
-class Estudiante(models.Model):
+class Usuarios(models.Model):
     nombre= models.CharField(max_length=30)
     apellido= models.CharField(max_length=30)
+    user= models.CharField(max_length=30)
+    contra= models.CharField(max_length=30)
     email= models.EmailField()
 
-class Profesor(models.Model):
+class Productos(models.Model):
     nombre= models.CharField(max_length=30)
-    apellido= models.CharField(max_length=30)
-    email= models.EmailField()
-    profesion= models.CharField(max_length=30)
+    tipo= models.CharField(max_length=30)
+    estado = models.BooleanField()
 
-class Entregable(models.Model):
+class Cursos(models.Model):
     nombre= models.CharField(max_length=30)
-    fechaDeEntrega = models.DateField()  
-    entregado = models.BooleanField()
-
-
+    camada = models.CharField(max_length=30)

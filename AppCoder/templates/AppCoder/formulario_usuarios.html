@@ -1,0 +1,43 @@
+{% extends "AppCoder/master.html" %}
+
+{% load static %}
+
+{% block contenidoSecciones %}
+<header style="height: 100px;  background-color: rgb(126, 129, 126); padding-top: 60px; height: 200px; ">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="text-center text-white">
+                    <!-- Page heading-->
+                    <h3 class="mb-1">USUARIOS, nuevo usuario</h3>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<footer class="footer bg-light">
+    <div class="container">
+        <div class="row" style="max-width: 600px; margin-left: auto; margin-right:auto">
+            <p>
+                <center>
+                    <!-- creo el form -->
+                    <form action="/formularioUsuarios/" method="POST" >{% csrf_token %} <!-- agrego siempre la indicación de python -->
+                        Todos los campos sin importantes!<br>
+                        <input class="form-control form-control-lg" id="nombre" type="text" placeholder="Tu nombre de usuario" style="margin: 5px;" />
+                        <input class="form-control form-control-lg" id="apellido" type="text" placeholder="Apellido" style="margin: 5px;" />
+                        <input class="form-control form-control-lg" id="usuario" type="password" placeholder="Elige un usuario" style="margin: 5px;" />
+                        <input class="form-control form-control-lg" id="contra" type="password" placeholder="Elige una contraseña" style="margin: 5px;" />
+                        <input class="form-control form-control-lg" id="nombre" type="submit" value="Registrarme" />
+                    </form>
+
+                </center>
+
+            </p>
+
+        </div>
+    </div>
+</footer>
+
+{% endblock %}

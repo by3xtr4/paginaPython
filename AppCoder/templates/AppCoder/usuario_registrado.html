@@ -1,0 +1,42 @@
+{% extends "AppCoder/master.html" %}
+
+{% load static %}
+
+{% block contenidoSecciones %}
+<header style="height: 100px;  background-color: rgb(126, 129, 126); padding-top: 60px; height: 200px; ">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="text-center text-white">
+                    <!-- Page heading-->
+                    <h3 class="mb-1">USUARIO, creando usuarios</h3>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<footer class="footer bg-light">
+    <div class="container">
+        <div class="row" style="max-width: 600px; margin-left: auto; margin-right:auto">
+            <p>
+                <center>
+                    <!-- creo el form -->
+                    <center>
+                        <!-- condiciono y traigo django-->
+                        Usuario registrado con éxito!!!<br>
+                        <a class="navbar-brand" href="usuarioFormulario">Registrar otro usuario </a>
+                    
+    
+                    </center>
+
+                </center>
+
+            </p>
+
+        </div>
+    </div>
+</footer>
+
+{% endblock %}

@@ -9,33 +9,45 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Inicio</title>
-        <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{%static 'AppCoder/assets/favicon.ico' %}" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{%static 'AppCoder/css/styles.css' %}" rel="stylesheet" />
+        <!-- traigo los css del template >>>>>>>>> -->
+        <link href="{%static 'AppCoder/css/styles.css' %}" rel="stylesheet" /> 
 
         <style>
-            .video-container {
-                position: relative;
-                padding-bottom: 56.25%;
-                padding-top: 30px; height: 0; overflow: hidden;
-                }
-
-                .video-container iframe,
-                .video-container object,
-                .video-container embed {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                }
-        </style>
-
+            .fullscreen-container {
+               position: relative;
+               top: 0;
+               right: 0;
+               bottom: 0;
+               left: 0;
+               overflow: hidden;
+               z-index: -100;
+           }
+           .fullscreen-video {
+               position: absolute;
+               top: 0;
+               left: 0;
+               width: 100%;
+               height: 100%;
+           }
+           @media (min-aspect-ratio: 16/9) {
+             .fullscreen-video {
+               width: 100%;
+               height: auto;
+             }
+           }
+           @media (max-aspect-ratio: 16/9) {
+             .fullscreen-video {
+               width: auto;
+               height: 100%;
+             }
+           }
+           
+           </style>
 
     </head>
     <body>
@@ -43,13 +55,10 @@
         <nav class="navbar navbar-light bg-light static-top" >
             <div class="container" >
                 <a class="navbar-brand" href="inicio">Inicio</a>
-                <a class="navbar-brand" href="profesores">Profesores</a>
                 <a class="navbar-brand" href="cursos">Cursos</a>
-                <a class="navbar-brand" href="estudiantes">Estudiantes</a>
-                <a class="navbar-brand" href="entregables">Entregables</a>
-                <a class="navbar-brand" href="impronta">Impronta</a>
-                <a class="navbar-brand" href="contador">contador</a>
-                <a class="btn btn-primary" href="#signup">INICIAR</a>
+                <a class="navbar-brand" href="usuarios">Usuarios</a>
+                <a class="navbar-brand" href="productos">Productos</a>
+                <a class="navbar-brand" href="newsletter">Newsletter</a>
             </div>
         </nav>
         <!--
@@ -64,27 +73,57 @@
         -->
         <!-- slide, general, video -->
 
-
         
-        <header class="masthead">
-            
-            
+        <div class="fullscreen-container" style="height: 550px;">
+
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5">Nuestra web Intermedia de Django - CoderHouse</h1>
+                            <h3 class="mb-5">Nuestra web Intermedia de Django - CoderHouse</h1>
 
-                            <h1 class="mb-2">Estoy reutilizando un diseño</h1>
-                            
+                            <!-- <h1 class="mb-2">Estoy reutilizando un diseño</h1> -->
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <video loop muted autoplay class="fullscreen-video">
+                <source src="{%static 'AppCoder/assets/img/Flower - 26790.mp4' %}" type="video/mp4">
+                <source src="{%static 'AppCoder/assets/img/Flower - 26790.mp4' %}" type="video/ogg">
+            </video>
+
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <div class="text-center text-white" style="padding-top: 100px;">
+                            <!-- Page heading-->
+                            <h3 class="mb-1">Nuestra web Intermedia de Django - CoderHouse</h1>
+
+                            <h1 class="mb-2">Estoy reutilizando un diseño</h1> 
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header original 
+        <header class="masthead" >
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <div class="text-center text-white">
+                            <h3 class="mb-5">Nuestra web Intermedia de Django - CoderHouse</h1>
+
                            
                         </div>
                     </div>
                 </div>
             </div>
         </header>
-
+        -->
         {% block contenidoSecciones %} <!-- inicio el block-->
 
         <!-- inicio muestreo de secciones -->
